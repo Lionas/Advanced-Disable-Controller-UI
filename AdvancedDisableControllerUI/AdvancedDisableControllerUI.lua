@@ -19,6 +19,7 @@ ADCUI.default =
   movable = true,
   mouseEnabled = false,
   clamped = false,
+  pinLabelScale = 1,
 }
 
 local LAYER_TOP = -1
@@ -35,7 +36,7 @@ local function initializePrefs()
   ADCUI.PREFS = ZO_SavedVars:New("AdvancedDisableControllerUI_SavedPrefs", 1, nil,
     {
       scale = ADCUI.default.scale,
-      pinLabelScale = ADCUI.default.scale,
+      pinLabelScale = ADCUI.default.pinLabelScale,
       width = ADCUI.default.width,
       height = ADCUI.default.height,
       x = ADCUI.default.anchorOffsetX,

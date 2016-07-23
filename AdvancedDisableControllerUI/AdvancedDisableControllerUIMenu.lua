@@ -1,4 +1,4 @@
--- Advanced Disable Controller UI Menu
+﻿-- Advanced Disable Controller UI Menu
 -- Author: Lionas
 local PanelTitle = "Advanced Disable Controller UI"
 local Version = "1.0"
@@ -39,24 +39,32 @@ function LoadLAM2Panel()
         },
         [3] = 
         {
-            type = "editbox",
+            type = "slider",
             name = GetString(ADCUI_SCALE_TITLE),
             tooltip = GetString(ACCUI_SCALE_TOOLTIP),
+			min = 8,
+			max = 11,
+			step = 1,
+			default = ADCUI.PREFS.scale * 10,
             getFunc = 
               function() 
-                return ADCUI.PREFS.scale
+                return ADCUI.PREFS.scale * 10
               end,
             setFunc = 
               function(value) 
-                ADCUI.PREFS.scale = tonumber(value)
+                ADCUI.PREFS.scale = tonumber(value) / 10.0
                 ADCUI:frameUpdate()
               end,
         },
         [4] = 
         {
-            type = "editbox",
+            type = "slider",
             name = GetString(ADCUI_WIDTH_TITLE),
             tooltip = GetString(ADCUI_WIDTH_TOOLTIP),
+			min = 0,
+			max = 1500,
+			step = 10,
+			default = ADCUI.PREFS.width,
             getFunc = 
               function()
                 return ADCUI.PREFS.width
@@ -69,9 +77,13 @@ function LoadLAM2Panel()
         },
         [5] = 
         {
-            type = "editbox",
+            type = "slider",
             name = GetString(ADCUI_HEIGHT_TITLE),
             tooltip = GetString(ADCUI_HEIGHT_TOOLTIP),
+			min = 0,
+			max = 100,
+			step = 1,
+			default = ADCUI.PREFS.height,
             getFunc = 
               function() 
                 return ADCUI.PREFS.height 
@@ -84,16 +96,20 @@ function LoadLAM2Panel()
         },
         [6] = 
         {
-            type = "editbox",
-            name = GetString(ADCUI_PIN_SCALE_TITLE),
-            tooltip = GetString(ADCUI_PIN_SCALE_TOOLTIP),
+            type = "slider",
+            name = GetString(ADCUI_LABEL_SCALE_TITLE),
+            tooltip = GetString(ADCUI_LABEL_SCALE_TOOLTIP),
+			min = 6,
+			max = 11,
+			step = 1,
+			default = ADCUI.PREFS.pinLabelScale * 10,
             getFunc = 
               function() 
-                return ADCUI.PREFS.pinLabelScale 
+                return ADCUI.PREFS.pinLabelScale * 10
               end,
             setFunc = 
               function(value) 
-                ADCUI.PREFS.pinLabelScale = tonumber(value) 
+                ADCUI.PREFS.pinLabelScale = tonumber(value) / 10.0
                 ADCUI:frameUpdate()
               end,
         },
