@@ -111,6 +111,14 @@ local function onLoad(event, addon)
  
 end
 
+-- onCraftStationInteract
+local function onCraftStationInteract(event, addon)
+  
+  -- Prevent ESO UI bug -- interaction freezing
+  CALLBACK_MANAGER:FireCallbacks("CraftingAnimationsStopped")
+ 
+end
+
 -- Update variables
 local function onUpdateVars()
   
@@ -133,5 +141,7 @@ local function onUpdateVars()
 end  
 
 -- Regist event handler
-EVENT_MANAGER:RegisterForEvent("AdvancedDisableControllerUI_OnLoad", EVENT_ADD_ON_LOADED, onLoad)
-EVENT_MANAGER:RegisterForEvent("AdvancedDisableControllerUI_Vars", EVENT_GLOBAL_MOUSE_UP, onUpdateVars)
+EVENT_MANAGER:RegisterForEvent(myAddonName, EVENT_ADD_ON_LOADED, onLoad)
+EVENT_MANAGER:RegisterForEvent(myAddonName, EVENT_GLOBAL_MOUSE_UP, onUpdateVars)
+EVENT_MANAGER:RegisterForEvent(myAddonName, EVENT_CRAFT_COMPLETED, onCraftStationInteract)
+
