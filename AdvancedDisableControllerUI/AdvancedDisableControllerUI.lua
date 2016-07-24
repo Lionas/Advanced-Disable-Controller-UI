@@ -143,5 +143,6 @@ end
 -- Regist event handler
 EVENT_MANAGER:RegisterForEvent(myAddonName, EVENT_ADD_ON_LOADED, onLoad)
 EVENT_MANAGER:RegisterForEvent(myAddonName, EVENT_GLOBAL_MOUSE_UP, onUpdateVars)
+EVENT_MANAGER:RegisterForEvent(myAddonName, EVENT_GLOBAL_MOUSE_DOWN, onUpdateVars)
 EVENT_MANAGER:RegisterForEvent(myAddonName, EVENT_CRAFT_COMPLETED, onCraftStationInteract)
 
