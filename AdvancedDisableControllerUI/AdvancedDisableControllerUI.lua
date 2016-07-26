@@ -25,10 +25,14 @@ ADCUI.default =
 local LAYER_TOP = -1
 local myAddonName = "AdvancedDisableControllerUI"
 local UPDATE_INTERVAL_MSEC = 5000
+local lockPicking = false
 
 -- disable gamepad mode
 function IsInGamepadPreferredMode()
-	return false
+
+    -- enable gamepad mode while lockpicking
+    return lockPicking
+
 end
 
 -- Initialize preferences
@@ -168,10 +172,27 @@ local function onUpdateVars()
   
 end  
 
+-- handling lockpicking
+local function onStartLockPicking()
+
+  lockPicking = true
+
+end
+
+local function onFinishLockPicking()
+
+  lockPicking = false
+
+end
+
 -- Regist event handler
 EVENT_MANAGER:RegisterForEvent(myAddonName, EVENT_ADD_ON_LOADED, onLoad)
 EVENT_MANAGER:RegisterForEvent(myAddonName, EVENT_GLOBAL_MOUSE_UP, onUpdateVars)
 EVENT_MANAGER:RegisterForEvent(myAddonName, EVENT_GLOBAL_MOUSE_DOWN, onUpdateVars)
 EVENT_MANAGER:RegisterForEvent(myAddonName, EVENT_CRAFT_COMPLETED, onCraftStationInteract)
+
+EVENT_MANAGER:RegisterForEvent(myAddonName, EVENT_BEGIN_LOCKPICK, onStartLockPicking)
+EVENT_MANAGER:RegisterForEvent(myAddonName, EVENT_LOCKPICK_FAILED, onFinishLockPicking)
+EVENT_MANAGER:RegisterForEvent(myAddonName, EVENT_LOCKPICK_SUCCESS, onFinishLockPicking)
 
 EVENT_MANAGER:RegisterForUpdate(myAddonName, UPDATE_INTERVAL_MSEC, onUpdateCompass)
