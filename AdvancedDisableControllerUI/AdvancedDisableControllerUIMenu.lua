@@ -29,11 +29,11 @@ function LoadLAM2Panel()
             tooltip = GetString(ADCUI_LOCK_TOOLTIP),
             getFunc = 
               function() 
-                return ADCUI.PREFS.lock
+                return ADCUI.savedVariables.lock
               end,
             setFunc = 
               function(value) 
-                ADCUI.PREFS.lock = value
+                ADCUI.savedVariables.lock = value
                 ADCUI:adjustCompass()
               end,
         },
@@ -45,14 +45,14 @@ function LoadLAM2Panel()
 			min = 8,
 			max = 11,
 			step = 1,
-			default = ADCUI.PREFS.scale * 10,
+			default = ADCUI.savedVariables.scale * 10,
             getFunc = 
               function() 
-                return ADCUI.PREFS.scale * 10
+                return ADCUI.savedVariables.scale * 10
               end,
             setFunc = 
               function(value) 
-                ADCUI.PREFS.scale = tonumber(value) / 10.0
+                ADCUI.savedVariables.scale = tonumber(value) / 10.0
                 ADCUI:frameUpdate()
               end,
         },
@@ -64,14 +64,14 @@ function LoadLAM2Panel()
 			min = 0,
 			max = 1500,
 			step = 10,
-			default = ADCUI.PREFS.width,
+			default = ADCUI.savedVariables.width,
             getFunc = 
               function()
-                return ADCUI.PREFS.width
+                return ADCUI.savedVariables.width
               end,
             setFunc = 
               function(value)
-                ADCUI.PREFS.width = tonumber(value) 
+                ADCUI.savedVariables.width = tonumber(value) 
                 ADCUI:frameUpdate() 
               end,
         },
@@ -83,14 +83,14 @@ function LoadLAM2Panel()
 			min = 0,
 			max = 100,
 			step = 1,
-			default = ADCUI.PREFS.height,
+			default = ADCUI.savedVariables.height,
             getFunc = 
               function() 
-                return ADCUI.PREFS.height 
+                return ADCUI.savedVariables.height 
               end,
             setFunc = 
               function(value) 
-                ADCUI.PREFS.height = tonumber(value) 
+                ADCUI.savedVariables.height = tonumber(value) 
                 ADCUI:frameUpdate() 
               end,
         },
@@ -102,14 +102,14 @@ function LoadLAM2Panel()
 			min = 6,
 			max = 11,
 			step = 1,
-			default = ADCUI.PREFS.pinLabelScale * 10,
+			default = ADCUI.savedVariables.pinLabelScale * 10,
             getFunc = 
               function() 
-                return ADCUI.PREFS.pinLabelScale * 10
+                return ADCUI.savedVariables.pinLabelScale * 10
               end,
             setFunc = 
               function(value) 
-                ADCUI.PREFS.pinLabelScale = tonumber(value) / 10.0
+                ADCUI.savedVariables.pinLabelScale = tonumber(value) / 10.0
                 ADCUI:frameUpdate()
               end,
         },
