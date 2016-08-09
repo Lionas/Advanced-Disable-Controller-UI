@@ -24,3 +24,11 @@ ZO_CreateStringId("ADCUI_HEIGHT_TOOLTIP", "コンパスの高さを設定しま�
 -- center pin text scale
 ZO_CreateStringId("ADCUI_LABEL_SCALE_TITLE", "ラベルの拡大率")
 ZO_CreateStringId("ADCUI_LABEL_SCALE_TOOLTIP", "ピンの上に表示される文字の拡大率を設定します")
+
+-- disable addon
+ZO_CreateStringId("ADCUI_USE_CONTROLLER_UI", "コントローラUIを使用する")
+
+-- keybinds
+ZO_CreateStringId("SI_BINDING_NAME_ADCUI_ACTIVATE", "設定画面の表示")
+ZO_CreateStringId("SI_BINDING_NAME_ADCUI_USE_GAMEPAD", "コントローラUIを使用する")
+

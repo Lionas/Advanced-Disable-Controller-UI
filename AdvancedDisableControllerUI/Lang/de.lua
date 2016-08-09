@@ -24,3 +24,10 @@ ZO_CreateStringId("ADCUI_HEIGHT_TOOLTIP", "Kompass Höhe")
 -- center pin text scale
 ZO_CreateStringId("ADCUI_LABEL_SCALE_TITLE", "Beschriftung")
 ZO_CreateStringId("ADCUI_LABEL_SCALE_TOOLTIP", "Skalierung der Kompassbeschriftung")
+
+-- disable addon
+ZO_CreateStringId("ADCUI_USE_CONTROLLER_UI", "Verwenden Controller UI")
+
+-- keybinds
+ZO_CreateStringId("SI_BINDING_NAME_ADCUI_ACTIVATE", "Menü anzeigen")
+ZO_CreateStringId("SI_BINDING_NAME_ADCUI_USE_GAMEPAD", "Verwenden Controller UI")
