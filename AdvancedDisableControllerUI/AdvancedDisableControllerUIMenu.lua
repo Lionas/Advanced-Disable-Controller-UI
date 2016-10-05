@@ -1,7 +1,7 @@
 ﻿-- Advanced Disable Controller UI Menu
 -- Author: Lionas
 local PanelTitle = "Advanced Disable Controller UI"
-local Version = "1.0"
+local Version = "1.4.0"
 local Author = "Lionas"
 
 local LAM2 = LibStub:GetLibrary("LibAddonMenu-2.0")
@@ -111,6 +111,21 @@ function LoadLAM2Panel()
               function(value) 
                 ADCUI.savedVariables.pinLabelScale = tonumber(value) / 10.0
                 ADCUI:frameUpdate()
+              end,
+        },
+        [7] = 
+        {
+            type = "checkbox",
+            name = GetString(ADCUI_USE_CONTROLLER_UI),
+            tooltip = GetString(ADCUI_USE_CONTROLLER_UI),
+            default = false,
+            getFunc = 
+              function() 
+                return ADCUI.savedVariables.useControllerUI
+              end,
+            setFunc = 
+              function(value) 
+                ADCUI.savedVariables.useControllerUI = value
               end,
         },
     }   

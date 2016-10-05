@@ -20,6 +20,7 @@ ADCUI.default =
   mouseEnabled = false,
   clamped = false,
   pinLabelScale = 1,
+  useControllerUI = false,
 }
 
 local LAYER_TOP = -1
@@ -27,11 +28,26 @@ local myAddonName = "AdvancedDisableControllerUI"
 local UPDATE_INTERVAL_MSEC = 5000
 local lockPicking = false
 
+-- toggle gamepad mode
+function toggleControllerUI()
+
+	ADCUI.savedVariables.useControllerUI = not ADCUI.savedVariables.useControllerUI
+
+end
+
 -- disable gamepad mode
 function IsInGamepadPreferredMode()
 
+	if(lockPicking) then
     -- enable gamepad mode while lockpicking
-    return lockPicking
+		return true
+	end
+
+	if(ADCUI.savedVariables ~= nil) then
+		return  ADCUI.savedVariables.useControllerUI
+	else
+		return false
+	end
 
 end
 
@@ -48,6 +64,7 @@ local function initializePrefs()
       y = ADCUI.default.anchorOffsetY,
       point = ADCUI.default.point,
       lock = ADCUI.default.lockEnabled,
+      useControllerUI = ADCUI.default.useControllerUI,
     }
   )
   

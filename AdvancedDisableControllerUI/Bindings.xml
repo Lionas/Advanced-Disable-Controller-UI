@@ -1,8 +1,11 @@
 <Bindings>
-  <Layer name="SI_KEYBINDINGS_LAYER_GENERAL">
-    <Category name="SI_KEYBINDINGS_CATEGORY_USER_INTERFACE">
-      <Action name="AdvancedDisableContollerUI">
+  <Layer name="SI_KEYBINDINGS_CATEGORY_GENERAL">
+    <Category name="Advanced Disable Controller UI">
+      <Action name="ADCUI_ACTIVATE">
         <Down>SLASH_COMMANDS["/adcui"]()</Down>
+      </Action>
+      <Action name="ADCUI_USE_GAMEPAD">
+        <Down>toggleControllerUI()</Down>
       </Action>
     </Category>
   </Layer>
