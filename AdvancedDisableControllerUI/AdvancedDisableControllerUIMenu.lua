@@ -1,7 +1,7 @@
 ﻿-- Advanced Disable Controller UI Menu
 -- Author: Lionas
 local PanelTitle = "Advanced Disable Controller UI"
-local Version = "1.4.0"
+local Version = "1.4.1"
 local Author = "Lionas"
 
 local LAM2 = LibStub:GetLibrary("LibAddonMenu-2.0")
